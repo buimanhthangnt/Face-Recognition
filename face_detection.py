@@ -8,7 +8,7 @@ def detect(image_path):
     image = cv.imread(image_path)
     image = imutils.resize(image, width=800)
     gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, 1.3, 10)
+    faces = face_cascade.detectMultiScale(gray, 1.1, 8)
     ret = []
     for (x, y, w, h) in faces:
         x, y, w, h = add_padding(x, y, w, h, image.shape[:2])

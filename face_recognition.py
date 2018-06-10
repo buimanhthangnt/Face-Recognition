@@ -29,6 +29,7 @@ def show_results(faces_and_poses, results, image_path):
         x, y, w, h = pos
         cv.rectangle(image, (x, y), (x+w, y+h), (255, 0, 0), 2)
         cv.putText(image, results[idx], (x+12, y+h+32), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+    if image.shape[0] > 800: image = imutils.resize(image, height=800)
     cv.imshow('result', image)
     cv.waitKey(0)
 
